@@ -7,7 +7,13 @@ public class Biblioteca {
 
         Livro l1 = new Livro("it a coisa", "Stephen King");
         Livro l2 = new Livro("48 leis do poder", "Robert Greene");
-        Livro l3 = new Livro("o principe", "Nicolau Maquiavel");
+        Livro l3 = new Livro("Moby Dick", "Herman Melville");
+        Livro l4 = new Livro("Dom Quixote", "Miguel de Cervantes");
+        Livro l5 = new Livro("Romeu e Julieta", "William Shakespear");
+        Livro l6 = new Livro("A arte da Guerra", "Sun Tzu");
+        Livro l7 = new Livro("Orgulho e preconceito", "Jane Austen");
+        Livro l8 = new Livro("Guerra e paz", "Leon Tolstói");
+    
 
         int continuar;
 
@@ -30,8 +36,23 @@ public class Biblioteca {
             else if (livro.equalsIgnoreCase("48 leis do poder")) {
                 livroSelecionado = l2;
             }
-            else if (livro.equalsIgnoreCase("o principe")) {
+            else if (livro.equalsIgnoreCase("Moby Dick")) {
                 livroSelecionado = l3;
+            }
+            else if(livro.equalsIgnoreCase("Dom Quixote")){
+                livroSelecionado = l4;
+            }
+            else if(livro.equalsIgnoreCase("Romeu e Julieta")){
+                livroSelecionado = l5;
+            }
+            else if(livro.equalsIgnoreCase("A arte da Guerra")){
+                livroSelecionado = l6;
+            }
+            else if(livro.equalsIgnoreCase("Orgulho e preconceito")){
+                livroSelecionado = l7;
+            }
+            else if(livro.equalsIgnoreCase("Guerra e paz")){
+                livroSelecionado = l8;
             }
 
             if (livroSelecionado != null) {
