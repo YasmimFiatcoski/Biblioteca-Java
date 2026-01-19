@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Biblioteca {
     public static void main(String[] args) {
-
+        //instanciando os objetos 
         Livro l1 = new Livro("it a coisa", "Stephen King");
         Livro l2 = new Livro("48 leis do poder", "Robert Greene");
         Livro l3 = new Livro("Moby Dick", "Herman Melville");
@@ -16,7 +16,7 @@ public class Biblioteca {
     
 
         int continuar;
-
+            //Prompt pra armazenar o livro desejado na variável "livro"
         do {
             String livro = JOptionPane.showInputDialog(
                 null,
@@ -29,7 +29,7 @@ public class Biblioteca {
             }
 
             Livro livroSelecionado = null;
-
+            //atribuindo valores através de condição
             if (livro.equalsIgnoreCase("it a coisa")) {
                 livroSelecionado = l1;
             }
@@ -56,9 +56,9 @@ public class Biblioteca {
             }
 
             if (livroSelecionado != null) {
-
+            //Mostra status do livro escolhido
                 livroSelecionado.Status();
-
+            //promp pra emprestar o livro se estiver disponível
                 if (!livroSelecionado.isEmprestado()) {
                     int opcao = JOptionPane.showConfirmDialog(
                         null,
@@ -66,31 +66,31 @@ public class Biblioteca {
                         "Empréstimo",
                         JOptionPane.YES_NO_OPTION
                     );
-
+                    //condição que muda o status do livro selecionado pra emprestado se a opção foi "sim"
                     if (opcao == JOptionPane.YES_OPTION) {
                         livroSelecionado.emprestar();
                     }
-
+                    //Final da condição se o livro estiver indisponível
                 } else {
                     JOptionPane.showMessageDialog(
                         null,
                         "Este livro já está emprestado."
                     );
                 }
-
+                //Mostra o status do livro
                 livroSelecionado.Status();
-
+                //Condição pra se o livro procurado não for encontrado ou não existe 
             } else {
                 JOptionPane.showMessageDialog(null, "Livro não encontrado.");
             }
-
+             //Prompt pra dar a opção de manter o código rodando ou não   
             continuar = JOptionPane.showConfirmDialog(
                 null,
                 "Deseja consultar outro livro?",
                 "Continuar",
                 JOptionPane.YES_NO_OPTION
             );
-
+            //Mantém o código rodando pra ter um "banco de dados" temporário. Termina quando o código para de rodar
         } while (continuar == JOptionPane.YES_OPTION);
     }
 }
